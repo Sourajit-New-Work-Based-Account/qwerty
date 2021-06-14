@@ -30,14 +30,11 @@ const server = new ApolloServer({
   })
 });
 
-server.listen(port,()=>{  // do not add localhost here if you are deploying it
-  const port = Process.env.PORT || 3000
-  console.log("server listening to port "+port);
-});/*
-server.listen().then(() => {
+server.listen(process.env.PORT || 4000).then(() => {
   console.log(`
     Server is running!
     Listening on port 4000
     Explore at https://studio.apollographql.com/dev
   `);
-});*/
+
+});
